@@ -1,0 +1,18 @@
+<p>listagem works!</p>
+<table>
+<thead>
+<tr>
+<th>nome do produto</th>
+<th>quantidade</th>
+<th>tamanho do pedido</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let estoque of estoques">
+<td>{{estoque.id}}</td>
+<td>{{estoque.nome}}</td>
+<td>{{estoque.quantidadeAtual}}</td>
+<td>{{estoque.tamPedido}}</td>
+</tr>
+</tbody>
+</table>

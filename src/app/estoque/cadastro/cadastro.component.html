@@ -1,0 +1,40 @@
+<p>cadastro works!</p>
+<form (ngSubmit)="salvar()">
+  <div>
+    <label>Nome:</label>
+    <input name="nome" type="text" [(ngModel)]="estoque.nome" />
+  </div>
+  <div>
+    <label>quantidade atual:</label>
+    <input
+      name="quantidadeAtual"
+      type="number"
+      [(ngModel)]="estoque.quantidadeAtual"
+    />
+  </div>
+  <div>
+    <label>tamanho pedido:</label>
+    <input name="tamanhoPedido" type="number" [(ngModel)]="estoque.tamPedido" />
+  </div>
+  <div>
+    <label>quantidade adicionada:</label>
+    <input
+      name="quantidadeAdicionada"
+      type="number"
+      [(ngModel)]="estoque.quantidadeAdd"
+    />
+  </div>
+  <div>
+    <label>data do pedido:</label>
+    <input name="dataDoPedido" type="date" [(ngModel)]="estoque.dataPedido" />
+  </div>
+  <div>
+    <label>quantidade minima:</label>
+    <input
+      name="quantidadeMinima"
+      type="number"
+      [(ngModel)]="estoque.quantidadeMinima"
+    />
+  </div>
+  <button type="submit">Gravar</button>
+</form>
