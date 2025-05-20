@@ -1,18 +1,41 @@
-<p>listagem works!</p>
-<table>
-<thead>
-<tr>
-<th>nome do produto</th>
-<th>quantidade</th>
-<th>tamanho do pedido</th>
-</tr>
-</thead>
-<tbody>
-<tr *ngFor="let estoque of estoques">
-<td>{{estoque.id}}</td>
-<td>{{estoque.nome}}</td>
-<td>{{estoque.quantidadeAtual}}</td>
-<td>{{estoque.tamPedido}}</td>
-</tr>
-</tbody>
-</table>
+<div class="container mt-4">
+  <h2 class="mb-4">Listagem de Produtos</h2>
+
+  <a routerLink="/cadastro" class="btn btn-success mb-3">Novo Cadastro</a>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Nome do Produto</th>
+          <th>Quantidade</th>
+          <th>Tamanho do Pedido</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estoque of estoques">
+          <td>{{ estoque.id }}</td>
+          <td>{{ estoque.nome }}</td>
+          <td>{{ estoque.quantidadeAtual }}</td>
+          <td>{{ estoque.tamPedido }}</td>
+          <td>
+            <a
+              [routerLink]="['/edicao', estoque.id]"
+              class="btn btn-primary btn-sm"
+            >
+              Editar
+            </a>
+          </td>
+        </tr>
+
+        <tr *ngIf="estoques.length === 0">
+          <td colspan="5" class="text-center text-muted">
+            Nenhum item encontrado.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
